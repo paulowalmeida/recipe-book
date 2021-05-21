@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "the-basic": {
+    "recipe-book": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/the-basic",
+            "outputPath": "dist/recipe-book",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -62,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "the-basic:build"
+            "browserTarget": "recipe-book:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "the-basic:build:production"
+              "browserTarget": "recipe-book:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "the-basic:build"
+            "browserTarget": "recipe-book:build"
           }
         },
         "test": {
@@ -110,15 +111,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "the-basic:serve"
+            "devServerTarget": "recipe-book:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "the-basic:serve:production"
+              "devServerTarget": "recipe-book:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "the-basic"
+  "defaultProject": "recipe-book"
 }
