@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FeatureEnum } from './shared/enuns/feature.enum';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'recipe-book';
+  loadedFeature: string = FeatureEnum.RECIPES;
+
+  onNavigate(feature: string) {
+    this.loadedFeature = feature;
+  }
 }
