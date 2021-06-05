@@ -4,6 +4,7 @@
       (recipeWasSelected)="onRecipeWasSelected($event)">
     </app-recipe-list>
   </div>
+
   <div class="col-md-7">
     <app-recipe-detail
       *ngIf="selectedRecipe; else noRecipe"
