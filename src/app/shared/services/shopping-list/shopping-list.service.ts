@@ -1,13 +1,11 @@
-import { EventEmitter, Injectable, Output } from "@angular/core";
-import { Ingredient } from "../shared/models/ingredient.model";
+import { EventEmitter } from "@angular/core";
+import { Ingredient } from "../../models/ingredient.model";
 
-@Injectable({providedIn: 'root'})
 export class ShoppingListService {
 
-  @Output()
   ingredientsChanged = new EventEmitter<Ingredient[]>();
 
-  private ingredients:Ingredient[] = [
+  private ingredients: Ingredient[] = [
     new Ingredient('Apples', 5),
     new Ingredient('Tomato', 10),
     new Ingredient('Garlic', 2),
@@ -19,6 +17,15 @@ export class ShoppingListService {
 
   addIngredient(ingredient: Ingredient) {
     this.ingredients.push(ingredient);
+    this.emitIngredientsChanged();
+  }
+
+  addIngredients(ingredients: Ingredient[]) {
+    this.ingredients.push(...ingredients);
+    this.emitIngredientsChanged();
+  }
+
+  private emitIngredientsChanged() {
     this.ingredientsChanged.emit(this.ingredients.slice());
   }
 }
