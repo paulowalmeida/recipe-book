@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 import { FeatureEnum } from '../shared/enums/feature.enum';
 
 @Component({
@@ -8,18 +9,11 @@ import { FeatureEnum } from '../shared/enums/feature.enum';
 })
 export class HeaderComponent implements OnInit {
 
-  @Output()
-  featureSelected = new EventEmitter<string>();
-
   features = FeatureEnum;
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  onSelect(feature: string) {
-    this.featureSelected.emit(feature);
   }
 
 }
