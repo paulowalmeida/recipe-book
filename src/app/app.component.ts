@@ -7,10 +7,6 @@ import { FeatureEnum } from './shared/enums/feature.enum';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'recipe-book';
-  loadedFeature: string = FeatureEnum.RECIPES;
 
-  onNavigate(feature: string) {
-    this.loadedFeature = feature;
-  }
+  title = 'recipe-book';
 }
